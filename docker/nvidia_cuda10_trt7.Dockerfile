@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install --upgrade pip
 RUN pip3 install tensorflow-gpu==1.15.0 jupyter
 
-ENV VERSION="7.0.0.11"
-ENV PKG_NAME="TensorRT-${VERSION}.Ubuntu-16.04.x86_64-gnu.cuda-10.0.cudnn7.6.tar.gz"
+ENV VERSION="5.1.5.0"
+ENV PKG_NAME="TensorRT-${VERSION}.Ubuntu-16.04.5.x86_64-gnu.cuda-10.0.cudnn7.5.tar.gz"
 
 ENV DOWNLOAD_LINK="http://192.168.1.57:8081/${PKG_NAME}"
 
@@ -32,16 +32,3 @@ RUN mv include /usr/include/tensorrt \
 
 WORKDIR /tmp
 RUN rm -rf ${PKG_NAME} TensorRT-${VERSION}
-
-#Add new sudo user
-# ENV USERNAME tf_utils
-# RUN useradd -m $USERNAME && \
-#         echo "$USERNAME:$USERNAME" | chpasswd && \
-#         usermod --shell /bin/bash $USERNAME && \
-#         usermod -aG sudo $USERNAME && \
-#         echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME && \
-#         chmod 0440 /etc/sudoers.d/$USERNAME && \
-#         # Replace 1000 with your user/group id
-#         usermod  --uid 1000 $USERNAME && \
-#         groupmod --gid 1000 $USERNAME
-
