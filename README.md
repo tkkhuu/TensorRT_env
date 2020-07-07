@@ -12,6 +12,6 @@
 3) Modify the DOWNLOAD_LINK environment in the Dockerfile to use your local IP address
 4) Build the container:
     ```
-    docker build docker/ -f docker/nvidia_cuda10_trtX.Dockerfile
+    docker build docker/ -t tensorrt
     ```
 
