@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip3 install tensorflow-gpu==1.15 
 
-RUN pip3 install tf2onnx==1.5.4
+RUN pip3 install onnx==1.6.0 tf2onnx==1.5.4
 # #git+https://github.com/onnx/tensorflow-onnx
 
 RUN apt-get install -y \
